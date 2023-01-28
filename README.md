@@ -1,0 +1,1 @@
+# django-fly-sqlite-template
