@@ -1,0 +1,11 @@
+gunicorn
+whitenoise[brotli]
+sentry-sdk
+Django
+django-environ
+django-model-utils
+django-htmx
+argon2-cffi
+django-crispy-forms
+crispy-bootstrap5
+django-forms-dynamic
