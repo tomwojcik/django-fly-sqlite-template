@@ -18,7 +18,7 @@ Advantages of this template:
 
 ### How to use
 
-Jinja2 doesn't work well with Python3.11, I think. This template works fine on 3.9.1.
+Last I checked, Jinja2 didn't work well with Python3.11. Use any lower Python version.
 
 ```shell
 $ pip install -U cookiecutter jinja2
