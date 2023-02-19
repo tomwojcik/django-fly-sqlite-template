@@ -91,7 +91,6 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + INTERNAL_APPS
 # if you don't want to cache everything, drop both CacheMiddleware
 
 MIDDLEWARE = [
-    "django.middleware.cache.UpdateCacheMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -101,8 +100,13 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "django.middleware.cache.FetchFromCacheMiddleware",
 ]
+if not IS_DEV_ENV:
+    MIDDLEWARE = [
+        "django.middleware.cache.UpdateCacheMiddleware",
+        *MIDDLEWARE,
+        "django.middleware.cache.FetchFromCacheMiddleware",
+    ]
 if IS_DEV_ENV:
     MIDDLEWARE += [
         "debug_toolbar.middleware.DebugToolbarMiddleware",
