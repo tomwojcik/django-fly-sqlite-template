@@ -114,7 +114,7 @@ virtualenv==20.17.1
     # via pre-commit
 wcwidth==0.2.6
     # via prompt-toolkit
-werkzeug==2.2.2
+werkzeug==2.2.3
     # via -r requirements-dev.in
 wheel==0.38.4
     # via pip-tools
